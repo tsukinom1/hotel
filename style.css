@@ -26,6 +26,9 @@ button{
     border: 1px solid #ffffff;
     border-radius: 50%;
 }
+.button:hover{
+    transform: scale(1.1);
+}
 .button-login{
     border: 1px solid #ffffff;
     border-radius: 5px;
@@ -62,11 +65,14 @@ a{
 }
 a:hover{
     color: #FCD043;
+    transition: color 0.5s ease;
 }
 ul{
     list-style-type: none;
 }
-
+.yellow-text{
+    color: #FCD043;
+}
 .container{
     width: 1860px;
     margin: auto;
@@ -98,6 +104,7 @@ ul{
     line-height: 200px;
     padding-bottom: 20px;
     font-family: 'Miracle Personal use.ogf' , sans-serif;
+    display: inline;
 }
 .header__main__list{
     display: flex;
@@ -145,7 +152,8 @@ ul{
     height: 50px;
 }
 .main__page-img{
-    margin-bottom: 40px;
+    width: 1902px;
+    margin: 40px -21px;
 }
 .main__page__blocks{
     display: flex;
@@ -308,4 +316,51 @@ ul{
 /*---------------------------------------------------*/
 
 
+.best{
+    background-image: url("./images/apps/best.jpg");
+    height: 1080px;
+    margin: 50px -21px;
+}
+.best .main-title{
+    padding: 100px 0 0 20px;
+    width: 780px;
+}
+.best .main-subtitle{
+    padding-left: 20px;
+    width: 440px;
+    font-size: 30px;
+    Line-height: 31px;
+}
+
+.gallery .main-title{
+    text-align: center;
+}
+.gallery-blocks{
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.gallery-block{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.gallery-main-text{
+    padding-left: 33%;
+    font-size: 18px;
+    opacity: 0.8;
+    text-align: center;
+}
+.gallery-block-img-1{
+    padding-bottom: 200px;
+    margin-left: -30px;
+}
+.gallery-block-img-4{
+    margin-right: -29px;
+}
+.gallery-block-img-5{
+    margin-left: -20px;
+}
 
