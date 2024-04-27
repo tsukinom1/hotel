@@ -1,19 +1,12 @@
 const swiper = new Swiper('.swiper', {
-    // Optional parameters
-
     loop: true,
-
-    // If we need pagination
     pagination: {
         el: '.swiper-pagination',
     },
-
-    // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-
     scrollbar: {
         el: '.swiper-scrollbar',
     },
@@ -191,3 +184,41 @@ for (let Button of Buttons) {
         })
     })
 }
+
+const formRoomInput = document.getElementById('form-room');
+document.querySelectorAll('.order-button').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        formRoomInput.value = button.closest('.swiper-slide').querySelector('.main-subtitle').textContent;
+    });
+});
+
+document.getElementById('form-room').addEventListener('mouseover', () => {
+    document.getElementById('form-room').setAttribute('title', 'Воспользуйтесь кнопкой "Rooms and apartments" \n или   поднимитесь наверх и нажмите кнопку \n "Забронировать" ');
+});
+
+
+const orderButton = document.getElementById('orderButton')
+orderButton.addEventListener('click', (e) => {
+    let inputs = document.querySelectorAll('.form-input');
+    let isValidForm = true;
+    inputs.forEach(input => {
+        if (input.value.trim() === '') {
+            isValidForm = false;
+            input.style.transform = "scale(1.1)";
+            input.style.borderColor = "red";
+            input.style.transition = 'transform 0.2s';
+        }
+        else {
+            input.style.transform = "";
+            input.style.borderColor = "";
+            input.style.transition = '';
+        }
+    });
+    if (!isValidForm) {
+        alert("Заполните поля правильно")
+    }
+    else {
+        const formName = document.getElementById('form-name');
+        alert(` ${formName.value}, Мы проверим ваш запрос и скоро свяжемся с вами!`)
+    }
+})
